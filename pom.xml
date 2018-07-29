@@ -88,7 +88,18 @@
     <developerConnection>scm:git:https://github.com/apache/incubator-servicecomb-java-chassis.git</developerConnection>
     <tag>v${project.version}</tag>
   </scm>
-
+  <distributionManagement>
+	<snapshotRepository>
+		<id>tiny-nexus-snapshots</id>
+		<name>tiny Nexus Snapshots</name>
+		<url>http://192.168.2.70:8081/repository/maven-snapshots/</url>
+	</snapshotRepository>
+	<repository>
+		<id>tiny-nexus-releases</id>
+		<name>tiny Release Repository</name>
+		<url>http://192.168.2.70:8081/repository/maven-releases/</url>
+	</repository>
+  </distributionManagement>
   <modules>
     <module>parent</module>
     <module>java-chassis-dependencies</module>
@@ -117,6 +128,7 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-deploy-plugin</artifactId>
           </plugin>
+		  <!--
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
@@ -131,6 +143,7 @@
               </execution>
             </executions>
           </plugin>
+		  -->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
